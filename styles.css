@@ -1,0 +1,98 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set up a color scheme */
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --accent-color: #007aff;
+  --background-color: #f2f2f7;
+}
+
+/* Style the navigation */
+header {
+  background-color: var(--primary-color);
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Style the hero section */
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #141e30, #243b55);
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Style the other sections */
+section {
+  padding: 100px 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Style the headings */
+h1, h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* Style the paragraph text */
+p {
+  color: var(--primary-color);
+  line-height: 1.5;
+}
+
+/* Style the about section */
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about-image img {
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+/* Style the contact section */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add more custom styles as needed */
