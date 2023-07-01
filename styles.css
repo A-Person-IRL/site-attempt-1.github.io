@@ -65,16 +65,9 @@ section {
   padding: 0 20px;
 }
 
-/* Style the headings */
-h1, h2 {
-  color: var(--primary-color);
-  margin-bottom: 20px;
-}
-
-/* Style the paragraph text */
-p {
-  color: var(--primary-color);
-  line-height: 1.5;
+/* Style the headings and paragraphs */
+h1, h2, p {
+  color: var(--text-color);
 }
 
 /* Style the about section */
