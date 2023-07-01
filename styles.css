@@ -9,8 +9,9 @@
 :root {
   --primary-color: #000;
   --secondary-color: #fff;
-  --accent-color: #007aff;
-  --background-color: #f2f2f7;
+  --accent-color: #0070c9;
+  --background-color: #f7f7f7;
+  --text-color: #333;
 }
 
 /* Style the navigation */
