@@ -43,11 +43,7 @@ nav ul li a {
 
 /* Style the hero section */
 #hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 100px 0;
   background-image: linear-gradient(to bottom right, #141e30, #243b55);
   color: var(--secondary-color);
   text-align: center;
@@ -57,6 +53,15 @@ nav ul li a {
   max-width: 500px;
   margin: 0 auto;
 }
+
+/* Adjust hero section height on smaller screens */
+@media screen and (max-width: 768px) {
+  #hero {
+    padding: 50px 0;
+    min-height: 100vh;
+  }
+}
+
 
 /* Style the other sections */
 section {
