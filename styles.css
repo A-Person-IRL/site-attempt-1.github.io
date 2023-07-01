@@ -16,8 +16,13 @@
 
 /* Style the navigation */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: var(--primary-color);
   padding: 10px;
+  z-index: 999;
 }
 
 nav ul {
@@ -55,8 +60,15 @@ nav ul li a {
 
 /* Style the other sections */
 section {
-  padding: 100px 0;
+  padding: 200px 0;
   background-color: var(--background-color);
+}
+
+/* Adjust section spacing on small screens */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 100px 0;
+  }
 }
 
 .container {
