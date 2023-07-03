@@ -7,7 +7,7 @@ body, html {
 
 /* Navigation styles */
 nav {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0);
   color: #fff;
   position: fixed;
   top: 0;
@@ -85,7 +85,6 @@ footer {
 /* Home section styles */
 #home {
   background-color: #000;
-  animation: backgroundFade 10s infinite alternate;
   transition: background-color 0.5s ease;
 }
 
@@ -95,41 +94,3 @@ footer {
   z-index: 1;
 }
 
-@keyframes backgroundFade {
-  0% {
-    background-color: #000;
-  }
-  50% {
-    background-color: #fff;
-  }
-  100% {
-    background-color: #000;
-  }
-}
-
-@media (max-width: 768px) {
-  section {
-    min-height: 100vh;
-  }
-}
-
-/* Gold and White background */
-#home.alternate {
-  background-color: gold;
-}
-
-#home.alternate .container {
-  color: #fff;
-}
-
-@keyframes backgroundAlternate {
-  0% {
-    background-color: gold;
-  }
-  50% {
-    background-color: #fff;
-  }
-  100% {
-    background-color: gold;
-  }
-}
