@@ -1,63 +1,71 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Your Website Title</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
-  <section id="home">
-    <div class="container">
-      <h1>Welcome to Your Website</h1>
-      <p>Beautifully crafted and professional</p>
-    </div>
-  </section>
+/* Navigation styles */
+nav {
+  background: #333;
+  color: #fff;
+}
 
-  <section id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut urna nunc. Vestibulum lobortis nulla leo, id pharetra orci efficitur in.</p>
-    </div>
-  </section>
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
 
-  <section id="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Service 1</li>
-        <li>Service 2</li>
-        <li>Service 3</li>
-      </ul>
-    </div>
-  </section>
+nav ul li {
+  padding: 10px;
+}
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>Fill out the form below to get in touch:</p>
-      <form>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </section>
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
 
-  <footer>
-    <p>&copy; 2023 Your Website. All rights reserved.</p>
-  </footer>
+/* Section styles */
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+section h2 {
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input, textarea {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 300px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
