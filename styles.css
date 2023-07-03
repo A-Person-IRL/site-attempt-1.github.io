@@ -14,7 +14,7 @@ nav {
   left: 0;
   width: 100%;
   z-index: 999;
-  transition: background 0.3s ease;
+  transition: background 0.5s ease;
 }
 
 nav ul {
@@ -93,4 +93,3 @@ footer {
   position: relative;
   z-index: 1;
 }
-
