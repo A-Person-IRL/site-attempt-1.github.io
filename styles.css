@@ -84,9 +84,9 @@ footer {
 
 /* Home section styles */
 #home {
-  background: linear-gradient(to bottom, #000000, #141414), url('background.jpg') center/cover no-repeat;
+  background-color: #000;
   animation: backgroundFade 30s infinite alternate;
-  transition: background 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 #home .container {
@@ -97,13 +97,13 @@ footer {
 
 @keyframes backgroundFade {
   0% {
-    background-color: #000000;
+    background-color: #000;
   }
   50% {
     background-color: #141414;
   }
   100% {
-    background-color: #000000;
+    background-color: #000;
   }
 }
 
@@ -112,4 +112,5 @@ footer {
     min-height: 100vh;
   }
 }
+
 
