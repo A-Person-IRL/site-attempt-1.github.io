@@ -57,6 +57,8 @@ nav ul li a:hover {
 
 /* Section styles */
 section {
+  position: relative;
+  z-index: 1;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -96,10 +98,4 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px;
-}
-
-/* Home section styles */
-#home {
-  position: relative;
-  z-index: 1;
 }
