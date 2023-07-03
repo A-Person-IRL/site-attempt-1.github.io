@@ -1,109 +1,63 @@
-/* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Website Title</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-/* Set up a color scheme */
-:root {
-  --primary-color: #000;
-  --secondary-color: #fff;
-  --accent-color: #0070c9;
-  --background-color: #f7f7f7;
-  --text-color: #333;
-}
+  <section id="home">
+    <div class="container">
+      <h1>Welcome to Your Website</h1>
+      <p>Beautifully crafted and professional</p>
+    </div>
+  </section>
 
-/* Style the navigation */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--primary-color);
-  padding: 10px;
-  z-index: 999;
-}
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut urna nunc. Vestibulum lobortis nulla leo, id pharetra orci efficitur in.</p>
+    </div>
+  </section>
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Service 1</li>
+        <li>Service 2</li>
+        <li>Service 3</li>
+      </ul>
+    </div>
+  </section>
 
-nav ul li {
-  margin-right: 20px;
-}
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Fill out the form below to get in touch:</p>
+      <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
 
-nav ul li a {
-  color: var(--secondary-color);
-  text-decoration: none;
-}
+  <footer>
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+  </footer>
 
-/* Style the hero section */
-#hero {
-  padding: 100px 0;
-  background-image: linear-gradient(to bottom right, #141e30, #243b55);
-  color: var(--secondary-color);
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-/* Adjust hero section height on smaller screens */
-@media screen and (max-width: 768px) {
-  #hero {
-    padding: 50px 0;
-    min-height: 100vh;
-  }
-}
-
-
-/* Style the other sections */
-section {
-  padding: 200px 0;
-  background-color: var(--background-color);
-}
-
-/* Adjust section spacing on small screens */
-@media screen and (max-width: 768px) {
-  section {
-    padding: 100px 0;
-  }
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Style the headings and paragraphs */
-h1, h2, p {
-  color: var(--text-color);
-}
-
-/* Style the about section */
-.about-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.about-image img {
-  max-width: 300px;
-  border-radius: 50%;
-}
-
-/* Style the contact section */
-.contact-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Add more custom styles as needed */
+  <script src="script.js"></script>
+</body>
+</html>
