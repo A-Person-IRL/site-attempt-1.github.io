@@ -18,7 +18,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Change navigation background on scroll
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('nav');
-  const homeSection = document.getElementById('home');
   const currentSection = getCurrentSection();
   const targetColor = window.getComputedStyle(currentSection).backgroundColor;
   const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -26,10 +25,8 @@ window.addEventListener('scroll', function() {
 
   if (scrollPosition < windowHeight) {
     nav.style.background = `rgba(0, 0, 0, ${scrollPosition / windowHeight})`;
-    homeSection.style.opacity = `1`;
   } else {
-    nav.style.background = `rgba(0, 0, 0, 1)`;
-    homeSection.style.opacity = `0`;
+    nav.style.background = `rgba(0, 0, 1)`;
   }
 
   animateBackground(targetColor);
