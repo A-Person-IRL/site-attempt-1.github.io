@@ -1,5 +1,10 @@
-window.addEventListener('scroll', function() {
-  var parallax = document.querySelector('#hero');
-  var scrolled = window.pageYOffset;
-  parallax.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 });
