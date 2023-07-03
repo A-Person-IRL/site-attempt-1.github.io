@@ -5,12 +5,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     const targetSection = document.querySelector(this.getAttribute('href'));
     const targetColor = window.getComputedStyle(targetSection).backgroundColor;
-    
+
     document.querySelector('html, body').scrollTo({
       top: targetSection.offsetTop,
       behavior: 'smooth'
     });
-    
+
     animateBackground(targetColor);
   });
 });
@@ -27,7 +27,7 @@ window.addEventListener('scroll', function() {
   if (scrollPosition < windowHeight) {
     nav.style.background = `rgba(0, 0, 0, ${scrollPosition / windowHeight})`;
     homeSection.style.backgroundColor = `rgba(0, 0, 0, ${1 - (scrollPosition / windowHeight)})`;
-  } else {
+  } else if (scrollPosition > windowHeight && scrollPosition < currentSection.offsetTop) {
     nav.style.background = `rgba(0, 0, 0, 1)`;
     homeSection.style.backgroundColor = `rgba(0, 0, 0, 0)`;
   }
