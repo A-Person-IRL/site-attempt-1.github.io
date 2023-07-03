@@ -5,12 +5,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     const targetSection = document.querySelector(this.getAttribute('href'));
     const targetColor = window.getComputedStyle(targetSection).backgroundColor;
-    
+
     document.querySelector('html, body').scrollTo({
       top: targetSection.offsetTop,
       behavior: 'smooth'
     });
-    
+
     animateBackground(targetColor);
   });
 });
@@ -18,6 +18,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Change navigation background on scroll
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('nav');
+  const bodyBackground = document.querySelector('body::before');
+  const homeSection = document.getElementById('home');
   const currentSection = getCurrentSection();
   const targetColor = window.getComputedStyle(currentSection).backgroundColor;
   const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -25,8 +27,10 @@ window.addEventListener('scroll', function() {
 
   if (scrollPosition < windowHeight) {
     nav.style.background = `rgba(0, 0, 0, ${scrollPosition / windowHeight})`;
+    bodyBackground.style.opacity = `1`;
   } else {
-    nav.style.background = `rgba(0, 0, 1)`;
+    nav.style.background = `rgba(0, 0, 0, 1)`;
+    bodyBackground.style.opacity = `0`;
   }
 
   animateBackground(targetColor);
