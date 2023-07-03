@@ -24,7 +24,10 @@ const homeSection = document.getElementById('home');
 let colorIndex = 0;
 
 setInterval(() => {
-  const colors = ['#000', '#141414', '#222', '#333']; // Add more colors here
-  colorIndex = (colorIndex + 1) % colors.length;
-  homeSection.style.backgroundColor = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % 2;
+  if (colorIndex === 0) {
+    homeSection.classList.remove('alternate');
+  } else {
+    homeSection.classList.add('alternate');
+  }
 }, 5000);
