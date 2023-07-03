@@ -5,12 +5,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     const targetSection = document.querySelector(this.getAttribute('href'));
     const targetColor = window.getComputedStyle(targetSection).backgroundColor;
-
+    
     document.querySelector('html, body').scrollTo({
       top: targetSection.offsetTop,
       behavior: 'smooth'
     });
-
+    
     animateBackground(targetColor);
   });
 });
@@ -26,10 +26,10 @@ window.addEventListener('scroll', function() {
 
   if (scrollPosition < windowHeight) {
     nav.style.background = `rgba(0, 0, 0, ${scrollPosition / windowHeight})`;
-    homeSection.style.backgroundColor = `rgba(0, 0, 0, ${1 - (scrollPosition / windowHeight)})`;
-  } else if (scrollPosition > windowHeight && scrollPosition < currentSection.offsetTop) {
+    homeSection.style.opacity = `1`;
+  } else {
     nav.style.background = `rgba(0, 0, 0, 1)`;
-    homeSection.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+    homeSection.style.opacity = `0`;
   }
 
   animateBackground(targetColor);
@@ -55,10 +55,9 @@ function getCurrentSection() {
 
 // Animate the background color transition
 function animateBackground(targetColor) {
-  const homeSection = document.getElementById('home');
-  const currentColor = window.getComputedStyle(homeSection).backgroundColor;
-  const currentRGB = getRGBValues(currentColor);
-  const targetRGB = getRGBValues(targetColor);
+  const bodyBackground = document.querySelector('body::before');
+  const currentOpacity = parseFloat(window.getComputedStyle(bodyBackground).opacity);
+  const targetOpacity = (targetColor === 'rgb(0, 0, 0)') ? 1 : 0;
 
   let animationInterval;
   let step = 0;
@@ -66,28 +65,13 @@ function animateBackground(targetColor) {
   animationInterval = setInterval(() => {
     step++;
 
-    const r = Math.round(lerp(currentRGB.r, targetRGB.r, step / 100));
-    const g = Math.round(lerp(currentRGB.g, targetRGB.g, step / 100));
-    const b = Math.round(lerp(currentRGB.b, targetRGB.b, step / 100));
-
-    homeSection.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    const opacity = lerp(currentOpacity, targetOpacity, step / 100);
+    bodyBackground.style.opacity = opacity;
 
     if (step === 100) {
       clearInterval(animationInterval);
     }
   }, 10);
-}
-
-// Extract RGB values from a color string
-function getRGBValues(color) {
-  const regex = /(\d{1,3}), (\d{1,3}), (\d{1,3})/;
-  const matches = regex.exec(color);
-
-  return {
-    r: parseInt(matches[1]),
-    g: parseInt(matches[2]),
-    b: parseInt(matches[3])
-  };
 }
 
 // Linear interpolation function
