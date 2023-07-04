@@ -5,7 +5,7 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
-/* Background styles */
+/* Background styles 
 body::before {
   content: '';
   position: fixed;
@@ -16,7 +16,7 @@ body::before {
   background-color: #000;
   opacity: 1;
   z-index: -1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;*/
 }
 
 /* Navigation styles */
