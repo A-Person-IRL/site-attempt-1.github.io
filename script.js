@@ -1,4 +1,3 @@
-// Calculate fade positions based on scroll position
 window.addEventListener('scroll', function() {
   const sections = document.querySelectorAll('section');
   const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -25,9 +24,9 @@ window.addEventListener('scroll', function() {
     const nextSectionMiddle = nextSection.offsetTop + nextSection.offsetHeight / 2;
 
     if (scrollPosition < currentSectionMiddle) {
-      fade = 1 - (currentSectionMiddle - scrollPosition) / fadeStart;
+      fade = 1 - (currentSectionMiddle - scrollPosition) / (fadeStart - fadeEnd);
     } else {
-      fade = 1 - (scrollPosition - currentSectionMiddle) / fadeStart;
+      fade = 1 - (scrollPosition - currentSectionMiddle) / (fadeEnd - fadeStart);
     }
 
     fade = Math.max(0, Math.min(1, fade)); // Clamp fade value between 0 and 1
