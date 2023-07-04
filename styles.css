@@ -71,6 +71,10 @@ section h2 {
 section#home h1 {
   color: #fff;
 }
+/* Paragraph text under heading 1 (Beautifully...)*/
+section#home p {
+  color: #fff;
+}
 
 
 /* Form styles */
