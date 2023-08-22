@@ -7,18 +7,16 @@ body, html {
 }
 
 /* Background styles */
-body::before {
+body {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000; /* Set initial background color to black */
   opacity: 0; /*change opacity to 0 */
   z-index: -1;
-  transition: opacity 0.5s ease;
-}
+  transition: backround 1.5s ease;
 
 /* Navigation styles */
 nav {
