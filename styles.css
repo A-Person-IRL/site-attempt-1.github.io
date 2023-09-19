@@ -34,25 +34,32 @@ nav {
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
 }
 
 nav ul li {
-  padding: 10px;
+}
+
+nav ul li:hover >a {
+  color:#000;
+  Background-Color: #00ff00;
+  
 }
 
 nav ul li a {
   color: #fff;
+  padding: 10px; 
+  Padding-top: 10px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #a8dadc;
+  background-color: #555;
+  color: #fff;
 }
-
 /* Section styles */
 section {
   position: relative;
