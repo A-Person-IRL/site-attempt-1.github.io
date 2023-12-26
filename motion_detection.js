@@ -29,10 +29,17 @@ function processVideo() {
         cv.absdiff(prevGray, gray, motion);
         cv.threshold(motion, motion, 50, 255, cv.THRESH_BINARY);
 
-        // Check if motion is detected in alarm mode
-        if (alertMode && cv.countNonZero(motion) > 1000) {
-            showAlarmAlert();
+        // Check if motion is detected and change background color
+        if (cv.countNonZero(motion) > 1000) {
+            document.body.style.backgroundColor = 'red';
+            if (alertMode) {
+                showAlarmAlert();
+            }
+        } else {
+            document.body.style.backgroundColor = 'white';
         }
+    } else {
+        document.body.style.backgroundColor = 'white';
     }
 
     // Display the result on the canvas
