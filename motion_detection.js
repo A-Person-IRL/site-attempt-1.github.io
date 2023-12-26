@@ -87,4 +87,3 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error accessing the camera: ', error);
         });
 });
-
