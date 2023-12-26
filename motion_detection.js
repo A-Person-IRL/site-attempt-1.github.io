@@ -1,9 +1,10 @@
-let video, canvas, context, cap, frame, src, gray, prevGray, motion;
+let video, canvas, context, cap, frame, src, gray, prevGray, motion, alertMode;
 
 function onOpenCvReady() {
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
     context = canvas.getContext('2d');
+    alertMode = false; // Variable to track the mode
     
     cap = new cv.VideoCapture(video);
 
@@ -27,6 +28,11 @@ function processVideo() {
     if (prevGray.cols > 0) {
         cv.absdiff(prevGray, gray, motion);
         cv.threshold(motion, motion, 50, 255, cv.THRESH_BINARY);
+
+        // Check if motion is detected in alarm mode
+        if (alertMode && cv.countNonZero(motion) > 1000) {
+            showAlarmAlert();
+        }
     }
 
     // Display the result on the canvas
@@ -40,6 +46,30 @@ function processVideo() {
 
     // Call the next frame
     requestAnimationFrame(processVideo);
+}
+
+function showAlarmAlert() {
+    // Display a simple alert on the screen (you can customize this)
+    const alertBox = document.createElement('div');
+    alertBox.setAttribute('id', 'alertBox');
+    alertBox.textContent = 'ALERT!';
+    alertBox.style.fontSize = '36px';
+    alertBox.style.color = 'red';
+    alertBox.style.position = 'absolute';
+    alertBox.style.top = '50%';
+    alertBox.style.left = '50%';
+    alertBox.style.transform = 'translate(-50%, -50%)';
+    alertBox.style.zIndex = '9999';
+    document.body.appendChild(alertBox);
+
+    // Remove the alert after a short delay (you can adjust the duration)
+    setTimeout(() => {
+        alertBox.remove();
+    }, 2000);
+}
+
+function toggleMode() {
+    alertMode = !alertMode; // Toggle between passive watch mode and alarm mode
 }
 
 // Open the video stream when the page loads
