@@ -5,7 +5,7 @@ function onOpenCvReady() {
     canvas = document.getElementById('canvas');
     context = canvas.getContext('2d');
     alertMode = false; // Variable to track the mode
-    
+
     cap = new cv.VideoCapture(video);
 
     // Initialize variables for motion detection
@@ -29,17 +29,12 @@ function processVideo() {
         cv.absdiff(prevGray, gray, motion);
         cv.threshold(motion, motion, 50, 255, cv.THRESH_BINARY);
 
-        // Check if motion is detected and change background color
+        // Check if motion is detected in alarm mode
         if (cv.countNonZero(motion) > 1000) {
-            document.body.style.backgroundColor = 'red';
-            if (alertMode) {
-                showAlarmAlert();
-            }
+            handleMotionDetection();
         } else {
-            document.body.style.backgroundColor = 'white';
+            handleNoMotion();
         }
-    } else {
-        document.body.style.backgroundColor = 'white';
     }
 
     // Display the result on the canvas
@@ -53,6 +48,21 @@ function processVideo() {
 
     // Call the next frame
     requestAnimationFrame(processVideo);
+}
+
+function handleMotionDetection() {
+    // Change the background color to red
+    document.body.style.backgroundColor = 'red';
+
+    // Check if motion is detected in alarm mode
+    if (alertMode) {
+        showAlarmAlert();
+    }
+}
+
+function handleNoMotion() {
+    // Change the background color back to white
+    document.body.style.backgroundColor = 'white';
 }
 
 function showAlarmAlert() {
