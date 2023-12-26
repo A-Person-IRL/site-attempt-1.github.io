@@ -50,21 +50,14 @@ function processVideo() {
 
 function showAlarmAlert() {
     // Display a simple alert on the screen (you can customize this)
-    const alertBox = document.createElement('div');
-    alertBox.setAttribute('id', 'alertBox');
+    const alertBox = document.getElementById('alertBox');
     alertBox.textContent = 'ALERT!';
     alertBox.style.fontSize = '36px';
     alertBox.style.color = 'red';
-    alertBox.style.position = 'absolute';
-    alertBox.style.top = '50%';
-    alertBox.style.left = '50%';
-    alertBox.style.transform = 'translate(-50%, -50%)';
-    alertBox.style.zIndex = '9999';
-    document.body.appendChild(alertBox);
 
     // Remove the alert after a short delay (you can adjust the duration)
     setTimeout(() => {
-        alertBox.remove();
+        alertBox.textContent = '';
     }, 2000);
 }
 
