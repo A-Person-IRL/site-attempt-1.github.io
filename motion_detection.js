@@ -63,6 +63,18 @@ function showAlarmAlert() {
 
 function toggleMode() {
     alertMode = !alertMode; // Toggle between passive watch mode and alarm mode
+    updateModeText();
+    updateButtonText();
+}
+
+function updateModeText() {
+    const modeText = document.getElementById('modeText');
+    modeText.textContent = `Mode: ${alertMode ? 'Alarm' : 'Passive Watch'}`;
+}
+
+function updateButtonText() {
+    const toggleButton = document.getElementById('toggleButton');
+    toggleButton.textContent = `Switch to ${alertMode ? 'Passive Watch' : 'Alarm'} Mode`;
 }
 
 // Open the video stream when the page loads
@@ -75,3 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error accessing the camera: ', error);
         });
 });
+
