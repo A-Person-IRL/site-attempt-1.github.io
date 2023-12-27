@@ -1,10 +1,13 @@
 let video, canvas, context, cap, frame, src, gray, prevGray, motion, alertMode;
 
-function onOpenCvReady() {
+async function onOpenCvReady() {
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
     context = canvas.getContext('2d');
     alertMode = false; // Variable to track the mode
+
+    // Load OpenCV.js with the cv object
+    cv = await cv();
 
     cap = new cv.VideoCapture(video);
 
