@@ -19,7 +19,7 @@ function onOpenCvReady() {
 }
 
 function processVideo() {
-        cap.read(src);
+cap.read(src);
 
     // Convert the frame to grayscale
     cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY);
@@ -28,6 +28,9 @@ function processVideo() {
     if (prevGray.cols > 0) {
         cv.absdiff(prevGray, gray, motion);
         cv.threshold(motion, motion, 30, 255, cv.THRESH_BINARY); // Adjust the threshold value
+
+        // Log motion Mat to the console
+        console.log(motion.data8S);
 
         // Check if motion is detected in alarm mode
         if (cv.countNonZero(motion) > 1000) {
